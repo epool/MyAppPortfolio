@@ -10,7 +10,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 
-public class MainActivity extends AppCompatActivity implements View.OnClickListener {
+public class MainActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -23,13 +23,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         Button buildItBiggerButton = (Button) findViewById(R.id.build_it_bigger_button);
         Button xyzReaderButton = (Button) findViewById(R.id.xyz_reader_button);
         Button capstoneButton = (Button) findViewById(R.id.capstone_button);
-
-        spotifyStreamerButton.setOnClickListener(this);
-        footballScoresButton.setOnClickListener(this);
-        libraryAppButton.setOnClickListener(this);
-        buildItBiggerButton.setOnClickListener(this);
-        xyzReaderButton.setOnClickListener(this);
-        capstoneButton.setOnClickListener(this);
 
         ColorStateList udacityOrangeColorStateList = ColorStateList.valueOf(getResources().getColor(R.color.udacity_orange));
         ViewCompat.setBackgroundTintList(spotifyStreamerButton, udacityOrangeColorStateList);
@@ -64,8 +57,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         return super.onOptionsItemSelected(item);
     }
 
-    @Override
-    public void onClick(View v) {
+    public void openApplication(View v) {
         Toast.makeText(this, getString(R.string.click_message, ((Button) v).getText()), Toast.LENGTH_LONG).show();
     }
 }
